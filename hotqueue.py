@@ -2,6 +2,7 @@
 
 """HotQueue is a Python library that allows you to use Redis as a message queue
 within your Python programs.
+https://github.com/richardhenry/hotqueue
 """
 
 from functools import wraps
