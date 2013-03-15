@@ -1,0 +1,26 @@
+{% extends "coltrane/base_entries.html" %}
+
+{% block title %}{{ block.super }} | {{ object.title }}{% endblock %}
+
+{% block content %}
+    <h2>{{ object.title }}</h2>
+    <h2>{{ user }}</h2>
+    <h2>{{ ca }}</h2>
+    {{ object.body_html|safe }}
+    
+    <h2>评论</h2>
+    {% load comments %}
+    {% load markup %}
+    {% get_comment_list for object as comment_list %}
+    
+    {% for comment in comment_list %}
+        <p><strong>On {{ comment.submit_date|date:"F j, Y" }}, {{ comment.name }} said:</strong></p>
+    
+        {{ comment.comment|markdown:"safe" }}
+    {% endfor %}
+    
+    <h2>发表评论</h2>
+        
+    {% render_comment_form for object %}
+    
+{% endblock %}

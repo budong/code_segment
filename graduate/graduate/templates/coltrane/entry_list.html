@@ -1,0 +1,27 @@
+{% extends "coltrane/base_entries.html" %}
+
+{% block content %}
+    <h2>文章</h2>
+    
+    {% if object_list %}
+        <ul>
+        {% for entry in object_list %}
+            <li><a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>没有推荐文章</p>
+    {% endif %}
+    
+    <p>
+    {% if page_obj.has_previous %}
+        <a href="?page={{ page_obj.previous_page_number }}">上一页</a>
+    {% endif %}
+    {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+    {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">下一页</a>
+    {% endif %}
+    </p>
+    
+{% endblock %}
+
