@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+"""什么是多态"""
+
 class Person(object):
     def __init__(self,age):
         self.age = age
