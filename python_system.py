@@ -18,4 +18,10 @@ some_list=range(10)
 with open('/root/test.txt','w') as f:
     f.write("test")
 
+'''
+6.批量操作数据树模块
+import shutil
+shutil.copytree
+shutil.move
+shutil.rmtree
 
