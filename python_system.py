@@ -25,3 +25,34 @@ shutil.copytree
 shutil.move
 shutil.rmtree
 
+7.比较文件目录
+filecmp.dircmp
+file.cmp.cmp
+
+dirA=set(os.listdir("/tmp/dir1"))
+dirB = set(os.listdir("/tmp/dir2"))
+dirA -dirB
+
+os.remove
+
+8.文件匹配
+fnmatch
+glob
+
+for root,dir,files in os.walk("/tmp/"):
+    for file in files:
+        fullpath = os.path.join(root,file)
+        tar.add(fullpath)
+
+tar = tarfile.open("largefilecompressed.tar.bzip2","w|bz2")
+tar.add("bigfile")
+tar.close()
+
+tar = tarfile.open("largefilecompressed.tar.gzip","w|gz")
+tar.add("bigfile")
+tar.close()
+
+9数据持久化 dump,load
+pickle
+shelve
+yaml yaml.dump(v,file,default_flow_style=False) yaml.load(file)
