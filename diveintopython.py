@@ -69,3 +69,5 @@ os.path.splitext('/root/src/T-Shirt.mp3')[1].upper()[1:]
 10.python 私有函数
 如果一个 Python 函数，类方法，或属性的名字以两个下划线开始（但不是结束），它是私有的；其它所有的都是公有的。
 __setitem__  前后都是两个下划线，是专用方法
+
+a
