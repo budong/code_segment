@@ -70,4 +70,18 @@ os.path.splitext('/root/src/T-Shirt.mp3')[1].upper()[1:]
 如果一个 Python 函数，类方法，或属性的名字以两个下划线开始（但不是结束），它是私有的；其它所有的都是公有的。
 __setitem__  前后都是两个下划线，是专用方法
 
-a
+11.os目录路径相加
+import os
+os.path.join("c:\\music\\ap\\", "mahadeva.mp3") 
+
+os.path.split('/root/code_segment/diveintopython.py')
+('/root/code_segment', 'diveintopython.py')
+
+(filepath,filename) = os.path.split('/root/code_segment/diveintopython.py')
+(shortname,extension) = os.path.splitext(filename)
+
+[f for f in os.listdir(dirname) if os.path.isfile(os.path.join(dirname,f))]
+[f for f in os.listdir(dirname) if os.path.isdir(os.path.join(dirname,f))]
+
+import glob
+glob.glob('c:\\music\\_singles\\*.mp3')
