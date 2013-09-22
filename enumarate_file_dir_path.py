@@ -1,7 +1,7 @@
 #!/usr/local/python2.7/bin/python2.7
 
 import os
-path = "/tmp"
+path = "/home"
 
 def enumaratepaths(path=path):
     """Return the path to all the files in a directory recursively"""
