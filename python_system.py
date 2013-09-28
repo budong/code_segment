@@ -1,5 +1,7 @@
 1.下载ipython
 http://ipython.org/
+安装 easy_install
+http://peak.telecommunity.com/dist/ez_setup.py
 2.执行linux命令
 import subprocess
 subprocess.call(["ls","-l","/tmp"])

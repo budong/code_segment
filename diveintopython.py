@@ -85,3 +85,14 @@ os.path.split('/root/code_segment/diveintopython.py')
 
 import glob
 glob.glob('c:\\music\\_singles\\*.mp3')
+
+12.爬虫下载网页
+import urllib
+sock = urllib.urlopen("url")
+htmlsource = sock.read()
+sock.close()
+print htmlsource
+
+13.命名空间
+locals()
+globals()
