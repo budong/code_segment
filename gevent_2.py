@@ -1,0 +1,26 @@
+#!/usr/local/python2.7/bin/python2.7
+
+import time
+import gevent
+from gevent import select 
+
+start = time.time()
+tic = lambda: 'at %1.1f seconds' % (time.time() - start)
+
+def gr1():
+    #Busy waits for a second,but we don't want to stick around...
+    print('Start Polling: %s' % tic())
+    select.select([],[],[],2)
+    print('Enable Polling: %s' % tic())
+
+def gr2():
+    #Busy waits for a second,but we don't want to stcik around...
+    print('Started Polling: %s' % tic())
+    select.select([],[],[],2)
+    print('Enable Polling: %s' % tic())
+
+def gr3():
+    print("Hey lets do some stuff while the greenlets poll, %s" % tic())
+    gevent.sleep(0)
+
+gevent.joinall([gevent.spawn(gr1),gevent.spawn(gr2),gevent.spawn(gr3)])

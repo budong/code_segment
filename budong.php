@@ -66,4 +66,10 @@
     $t=time();
     echo ($t ."<br />");
     echo(date("D F d Y",$t));
+
+     //分割字符串，相当于python split
+     $str = "I am budong";
+     print_r(explode(" ",$str));
+     //php header跳转，有点意思
+     header('location: http://www.baidu.com');
 ?>
