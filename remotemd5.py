@@ -1,4 +1,7 @@
 #!/usr/local/python2.7/bin/python2.7
+#https://gist.github.com/brianewing/994303
+import os, hashlib, urllib2, optparse
+
 def get_remote_md5_sum(url, max_file_size=100*1024*1024):
     remote = urllib2.urlopen(url)
     hash = hashlib.md5()
