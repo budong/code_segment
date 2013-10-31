@@ -19,5 +19,8 @@ class Kls(object):
 
 ik = Kls(23)
 ik.printd()
-ik.smethod()
+ik.smethod(1,2)
 ik.cmethod()
+#Kls.printd()
+Kls.smethod(3,4)
+Kls.cmethod(5,6)
