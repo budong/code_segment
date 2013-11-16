@@ -74,12 +74,12 @@
 #        print("After %s called.result: %s" % (func.__name__,ret))
 #        return ret
 #    return _deco
-#
+
 #@deco
 #def myfunc(a,b):
 #    print("myfunc(%s,%s) called." % (a,b))
 #    return a+b
-#
+
 #@deco
 #def myfunc2(a,b,c):
 #    print("myfunc2(%s,%s,%s) called." % (a,b,c))
