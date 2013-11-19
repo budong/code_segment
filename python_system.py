@@ -58,3 +58,7 @@ tar.close()
 pickle
 shelve
 yaml yaml.dump(v,file,default_flow_style=False) yaml.load(file)
+
+10.字符 ascii码
+print chr(97)
+print ord('a')
