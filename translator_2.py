@@ -10,7 +10,7 @@ def makefilter(keep):
     return thefilter
 
 if __name__ == '__main__':
-    just_vowels = makefilter('aeioy')
+    just_vowels = makefilter('aeiouy')
     print just_vowels('four score and seven years ago')
     print just_vowels('tiger, tiger burning bright')
 
