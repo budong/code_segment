@@ -56,3 +56,40 @@ Out[8]: 'ABCdefg-1234567'
 In [9]: s.translate(table,'ab123')
 Out[9]: 'Cdefg-4567'
 
+判断文件以什么结尾：
+In [35]: from itertools import imap
+
+In [36]: def anyTrue(predicate,sequence):
+   ....:     return True in imap(predicate,sequence)
+   ....: 
+
+In [37]: def endsWith(s,*endings):
+   ....:     return anyTrue(s.endswith,endings)
+   ....: 
+
+In [38]: import os
+
+In [39]: for filename in os.listdir('.'):
+   ....:     if endsWith(filename,'.txt'):
+   ....:         print filename
+   ....:         
+xml.txt
+peiqiang.txt
+
+
+
+文件迭代对象，这个牛逼：
+In [82]: for num,line in enumerate(open('data.txt','r')):
+       ....:     print num,line
+          ....:     
+              0 /2013/04/17/30/309271/jiakaokemuyi_V3.5_mumayi_fd325.apk
+
+              1 /2013/04/09/30/305188/duliangdanweihuansuanqi_V1.0_mumayi_f9d78.apk
+
+              2 /2013/04/17/30/309276/jiakaokemusan_V3.0_mumayi_cce8f.apk
+
+              3 /2013/04/01/30/301439/jinshutanceqi_V1.3.6_mumayi_a95b8.apk
+
+              4 /2013/04/09/30/305188/duliangdanweihuansuanqi_V1.0_mumayi_f9d78.apk
+
+              5 /2013/04/16/30/308441/huanghuatanceqi_V4.4_mumayi_f02b7.apk
