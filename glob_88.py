@@ -7,6 +7,7 @@ def all_files(pattern,search_path,pathsep=os.pathsep):
         for match in glob.glob(os.path.join(path,pattern)):
             yield match
 
+print list(all_files('*.py',os.environ['PATH']))
 for match in  all_files('*.py',os.environ['PATH']):
     print match
 
