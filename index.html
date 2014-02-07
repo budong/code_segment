@@ -1,0 +1,380 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/uncleice.css" rel="stylesheet" type="text/css"/>
+<LINK rel="stylesheet" type="text/css" href="css/tccss.css">
+<title>DNS纠错导航页</title>
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script>
+$(document).ready(function(e) {
+    $("#icexxc").find("div").each(function(index, element) {
+		$(this).mouseover(function(){
+			$("#icexxc").attr("class","xxctag"+(index+1));
+			$(".xxcbodydt2").css("display","none");
+			$("#news"+(index+1)).css("display","block");
+		});
+        
+    });
+	$(".searchsolotag").each(function(index){
+		$(this).click(function(){
+			$("#div2").hide();
+			$("#div1").show();
+			//alert (index);
+			$(".searchkey").hide();
+			$("#hot"+index).show();
+			if(index==0){
+				$("#sertags").attr("class","searchtags");	
+			}else if(index==6){
+			
+				$("#div1").hide();
+				$("#div2").show();
+				$(".searchkey").hide();
+			$("#hot"+index).show();
+				$("#sertags").attr("class","searchtags"+index);
+			}else{
+				$("#sertags").attr("class","searchtags"+index);	
+			}
+			$("#typeHide").val(index);				   
+		});							
+	});
+});
+</script>
+</head>
+
+<body>
+	<!-----------top------------------>
+    <div class="mainhead">
+    	<div class="mainheadtips">
+        	<div class="mainheadtipstt">!提示：域名错误</div>
+            <div style="width:95px;height:75px;">
+            	<p class="tipsp">
+                	请重新输入，或试试我们为您精心推荐的网站
+                </p>
+            </div>
+        </div>
+        <div class="topadvertise">
+        	<div style="padding-top:7px;">
+                        <a href="http://www.bj96007.com" target="_blank" ><img src="http://60.195.191.229/upimge/20130630023948_lA.jpg" width="728" height="90"/></a>            
+            
+            </div>
+        </div>
+        <div class="smallgametj" style="margin-left:5px;display:inline;">
+        	<div class="smallgametjin">
+            	<div class="smalltjtext" style=" padding-left:10px;">小游戏推荐</div>
+                <div class="smalltjintext">
+                <ul>
+                	<!--<span><a href="http://game.17lele.net/sg/toSmallGame.html?smallGame.id=82">愤怒的小鸟</a></span>-->
+                                        <li class="smalltjintextulli li1"><a href="http://s.click.taobao.com/t?e=zGU34CA7K%2BPkqB05%2Bm7rfGKas1PIKp0U37pZuBouS75zgVQwkouGH0UISTVRtd%2BllNJ2%2Bjar%2FdFXdpeQURjQN2GejVJUkg5Vk3ovn9kf6Fj1TR6BjGLEDTuz5NWlOF97mQToxCKI6MOJ&pid=mm_42220797_0_0" target="_blank"><font color="">愤怒的小鸟</font></a></li>
+                                        <li class="smalltjintextulli li3"><a href="http://game.17lele.net/sg/toSmallGame.html?smallGame.id=22" target="_blank"><font color="">宠物连连看</font></a></li>
+                                        <li class="smalltjintextulli li2"><a href="http://game.17lele.net/sg/toSmallGame.html?smallGame.id=68" target="_blank"><font color="">Q版泡泡堂2</font></a></li>
+                                        </ul>
+               </div>
+            </div>
+        </div>
+    </div>
+    <!-----------top------------------>
+    <!-----------body------------------>
+    <div class="searchseat">
+    	<div class="searchtags" id="sertags">
+        	<div class="searchsolotag"></div>
+            <div class="searchsolotag"></div>
+            <div class="searchsolotag"></div>
+            <div class="searchsolotag"></div>
+            <div class="searchsolotag"></div>
+            <div class="searchsolotag"></div>
+            <div class="searchsolotag"></div>
+            <input id="typeHide" type="hidden" value="0"/>
+        </div>
+        <div class="searchbox">
+        	<div style="padding-top:20px;padding-left:20px;" id="div1">
+                <div class="baidulogo"></div>
+                <div class="searchinputbox">
+                	<div style="padding-top:5px;padding-left:5px;"><input id="b_c_s_n" class="icesearchinput" value="" type="text"/></div>
+                </div>
+                <div class="searchbutton"><a href="javascript:void(0)"><img src="images/searchbutton.gif" width="104" height="34" border="0"  onclick="javascript:serach()"/></a></div>
+                <div class="searchkey" id="hot0">
+                	<!--<div><a href="">火车票预订开始</a></div>-->
+                                   </div>
+                   <div class="searchkey" id="hot1" style="display:none">
+                	<!--<div><a href="">火车票预订开始</a></div>-->
+                                   </div>
+                <div class="searchkey" id="hot2" style="display:none">
+                	<!--<div><a href="">火车票预订开始</a></div>-->
+                                   </div>
+                <div class="searchkey" id="hot3" style="display:none">
+                	<!--<div><a href="">火车票预订开始</a></div>-->
+                                   </div>
+                <div class="searchkey" id="hot4" style="display:none">
+                	<!--<div><a href="">火车票预订开始</a></div>-->
+                                   </div>
+                <div class="searchkey" id="hot5" style="display:none">
+                	<!--<div><a href="">火车票预订开始</a></div>-->
+                                   </div>
+
+        	</div>
+            <div id="div2" style="padding-top:10px;padding-left:60px;display:none; float:left;" >
+<iframe name="alimamaifrm" frameborder="0" marginheight="0" marginwidth="0" border="0" scrolling="no" width="720" height="69" src="http://www.taobao.com/go/app/tbk_app/tb_search.php?pid=mm_42220797_4010303_13068785&g_taobao=1&g_style=1&g_lg=1&g_w=720&g_h=69&g_btn=1&g_txt=&g_hot=1&g_hc=0065FF&g_cid=0&g_c=1" ></iframe>
+   
+            </div>
+                 <div class="searchkey" id="hot6" style="display:none; width:150px; overflow:hidden; height:70px;">
+                	<!--<div><a href="">火车票预订开始</a></div>-->
+                 <br/>
+                                   </div>
+ 
+        </div>
+        
+       
+    </div>
+    <div class="clear"></div>
+    <!--<div class="tbrm">
+    	<span><b class="icered">淘宝热卖：</b></span>     
+               
+    </div>-->
+    <!-----------body------------------>
+    <div class="websitesadr">
+    	<div class="websitesadrleft">
+        	<div class="weblefthead"></div>
+        	<div class="webleftbody">
+            	<ul style="border-right:0;margin-left:1px;-margin-left:0;">                	
+                    
+                   <li>
+                        <span class="spanemdark"><a href="" target="_blank">名站</a></span>                        
+                                                <span><a href="http://www.ifeng.com/" target="_blank" ><font color="">凤凰网</font></a></span>
+                                                <span><a href="http://www.qq.com/" target="_blank" ><font color="">腾讯</font></a></span>
+                                                <span><a href="http://www.163.com/" target="_blank" ><font color="">网易</font></a></span>
+                                                <span><a href="http://www.sohu.com" target="_blank" ><font color="">搜狐</font></a></span>
+                                                <span><a href="http://www.sina.com.cn/" target="_blank" ><font color="">新浪</font></a></span>
+                                            </li>
+                    
+                   <li>
+                        <span class="spanemlight"><a href="" target="_blank">电影</a></span>                        
+                                                <span><a href="http://www.qire123.com/" target="_blank" ><font color="">奇热影院</font></a></span>
+                                                <span><a href="http://www.iqiyi.com/" target="_blank" ><font color="">爱奇艺</font></a></span>
+                                                <span><a href="http://www.letv.com/" target="_blank" ><font color="">乐视网</font></a></span>
+                                            </li>
+                    
+                   <li>
+                        <span class="spanemdark"><a href="" target="_blank">购物</a></span>                        
+                                                <span><a href="http://c.duomai.com/track.php?site_id=82308&aid=84&euid=&t=http%3A%2F%2Fwww.suning.com%2F" target="_blank" ><font color="">苏宁易购</font></a></span>
+                                                <span><a href="http://c.duomai.com/track.php?site_id=82308&aid=64&euid=&t=http%3A%2F%2Fwww.dangdang.com%2F" target="_blank" ><font color="">当当</font></a></span>
+                                                <span><a href="http://s.click.taobao.com/t_9?p=mm_42220797_0_0&l=http%3A%2F%2Fwww.tmall.com" target="_blank" ><font color="">淘宝特卖</font></a></span>
+                                                <span><a href="http://c.duomai.com/track.php?site_id=82308&aid=58&euid=&t=http%3A%2F%2Fwww.yihaodian.com%2F" target="_blank" ><font color="">一号店</font></a></span>
+                                            </li>
+                    
+                   <li>
+                        <span class="spanemlight"><a href="" target="_blank">交友</a></span>                        
+                                                <span><a href="http://www.17lele.net/" target="_blank" ><font color="">一起乐乐</font></a></span>
+                                                <span><a href="http://www.jiayuan.com/" target="_blank" ><font color="">世纪佳缘</font></a></span>
+                                                <span><a href="http://www.renren.com/" target="_blank" ><font color="">人人网</font></a></span>
+                                                <span><a href="http://www.kaixin001.com/" target="_blank" ><font color="">开心网</font></a></span>
+                                            </li>
+                    
+                   <li>
+                        <span class="spanemdark"><a href="" target="_blank">商城</a></span>                        
+                                                <span><a href="http://s.click.taobao.com/t?e=zGU34CA7K%2BPkqB05%2Bm7rfGGjlY60oHcc7bkKOQYlrQATSlu55W5FdgLMmXc%2BPPfOecl78Gbhuca99ltJGB2BpFe%2FFkLVo%2F3wanWgig84xV72Ftx4Ug%3D%3D" target="_blank" ><font color="">天猫</font></a></span>
+                                                <span><a href="http://c.duomai.com/track.php?site_id=82308&aid=236&euid=&t=http%3A%2F%2Fwww.gome.com.cn%2F" target="_blank" ><font color="">国美在线</font></a></span>
+                                                <span><a href="http://c.duomai.com/track.php?site_id=82308&aid=61&euid=&t=http%3A%2F%2Fwww.jd.com%2F" target="_blank" ><font color="">京东商城</font></a></span>
+                                                <span><a href="http://www.1mall.com?tracker_u=105652366" target="_blank" ><font color="">1号商城</font></a></span>
+                                            </li>
+                    
+                   <li>
+                        <span class="spanemlight"><a href="" target="_blank">酷玩</a></span>                        
+                                                <span><a href="http://txt.unionli.com/txlink.php?alid=44632" target="_blank" ><font color="">神武九天</font></a></span>
+                                                <span><a href="http://txt.unionli.com/txlink.php?alid=44630" target="_blank" ><font color="">冒险契约</font></a></span>
+                                                <span><a href="http://txt.unionli.com/txlink.php?alid=44631" target="_blank" ><font color="">古剑奇侠</font></a></span>
+                                            </li>
+                    
+                   <li>
+                        <span class="spanemdark"><a href="" target="_blank">小说</a></span>                        
+                                                <span><a href="http://www.huanxia.com/" target="_blank" ><font color="">幻侠小说</font></a></span>
+                                                <span><a href="http://www.xs8.cn/" target="_blank" ><font color="">言情小说吧</font></a></span>
+                                                <span><a href="http://book.sina.com.cn/" target="_blank" ><font color="">新浪读书</font></a></span>
+                                                <span><a href="http://www.qidian.com/Default.aspx" target="_blank" ><font color="">起点</font></a></span>
+                                            </li>
+                    
+                   <li>
+                        <span class="spanemlight"><a href="" target="_blank">推广</a></span>                        
+                                                <span><a href="http://masamaso.tmall.com/shop/view_shop.htm?spm=a220m.1000862.1000730.1.OCiMpi&user_number_id=127553740&rn=a75d58a4cc7604b8d3eb8c8734b858f5" target="_blank" ><font color="">玛萨玛索</font></a></span>
+                                                <span><a href="http://c.duomai.com/track.php?site_id=82308&aid=366&euid=&t=http%3A%2F%2Fwww.yougou.com%2F" target="_blank" ><font color="">优购商城</font></a></span>
+                                                <span><a href="http://c.duomai.com/track.php?site_id=82308&aid=205&euid=&t=http%3A%2F%2Fwww.handu.com%2F" target="_blank" ><font color="">韩都衣舍</font></a></span>
+                                                <span><a href="http://c.duomai.com/track.php?site_id=82308&aid=219&euid=&t=http%3A%2F%2Fwww.yesmywine.com%2F" target="_blank" ><font color="">也买酒</font></a></span>
+                                            </li>
+                    
+                   <li>
+                        <span class="spanemdark"><a href="" target="_blank">店铺</a></span>                        
+                                                <span><a href="http://c.duomai.com/track.php?site_id=82308&aid=300&euid=&t=http%3A%2F%2Fwww.ihush.com%2F" target="_blank" ><font color="">俏物悄语</font></a></span>
+                                                <span><a href="http://c.duomai.com/track.php?site_id=82308&aid=205&euid=&t=http%3A%2F%2Fwww.handu.com%2F" target="_blank" ><font color="">韩都衣舍</font></a></span>
+                                                <span><a href="http://c.duomai.com/track.php?site_id=82308&aid=163&euid=&t=http%3A%2F%2Fwww.jiuxian.com%2F" target="_blank" ><font color="">酒仙网</font></a></span>
+                                                <span><a href="http://s.click.taobao.com/t_9?p=mm_42220797_0_0&l=http%3A%2F%2Flist.tmall.com%2Fsearch_product.htm%3Fcat%3D50023647%26style%3Dg" target="_blank" ><font color="">天猫母婴</font></a></span>
+                                            </li>
+                    
+                   <li>
+                        <span class="spanemlight"><a href="" target="_blank">精选</a></span>                        
+                                                <span><a href="http://c.duomai.com/track.php?site_id=82308&aid=62&euid=&t=http%3A%2F%2Fwww.vancl.com" target="_blank" ><font color="">凡客诚品</font></a></span>
+                                                <span><a href="http://c.duomai.com/track.php?site_id=82308&aid=70&euid=&t=http%3A%2F%2Fwww.yintai.com" target="_blank" ><font color="">银泰</font></a></span>
+                                                <span><a href="http://c.duomai.com/track.php?site_id=82308&aid=366&euid=&t=http%3A%2F%2Fwww.yougou.com%2F" target="_blank" ><font color="">优购商城</font></a></span>
+                                                <span><a href="http://c.duomai.com/track.php?site_id=82308&aid=85&euid=&t=http%3A%2F%2Fwww.newegg.com.cn" target="_blank" ><font color="">新蛋</font></a></span>
+                                            </li>
+                    
+                   <li>
+                        <span class="spanemdark"><a href="" target="_blank">游戏</a></span>                        
+                                                <span><a href="http://www.17lele.net/" target="_blank" ><font color="">最新网页游戏</font></a></span>
+                                                <span><a href="http://ad.17lele.net/html1/217.html" target="_blank" ><font color="">仙落凡尘</font></a></span>
+                                                <span><a href="http://s.click.taobao.com/t_9?p=mm_42220797_0_0&l=http%3A%2F%2Fgame.taobao.com%2F" target="_blank" ><font color="">淘游戏</font></a></span>
+                                            </li>
+                                       
+                    
+                </ul>
+                <ul style="border-left:0;">
+                	
+                   
+                   <li>
+                        <span class="spanemdark"><a href="" target="_blank">团购</a></span>                        
+                                                <span><a href="http://www.manzuo.com/?campaign=emar&channel=cps&cid=5330&wi=NDU3OTQwfGN3" target="_blank" ><font color="">满座</font></a></span>
+                                                <span><a href="http://c.duomai.com/track.php?site_id=82308&aid=142&euid=&t=http%3A%2F%2Fwww.meituan.com%2F" target="_blank" ><font color="">美团</font></a></span>
+                                                <span><a href="http://c.duomai.com/track.php?site_id=82308&aid=299&euid=&t=http%3A%2F%2Ft.dianping.com%2F" target="_blank" ><font color="">大众点评</font></a></span>
+                                                <span><a href="http://btte.gouwuke.com/gouhuasuan.html?e=jiucuo" target="_blank" ><font color="#f00">天天特价</font></a></span>
+                                            </li>
+                    
+                   <li>
+                        <span class="spanemlight"><a href="" target="_blank">生活</a></span>                        
+                                                <span><a href="http://www.58.com/" target="_blank" ><font color="">58同城</font></a></span>
+                                                <span><a href="http://www.leho.com/" target="_blank" ><font color="">爱生活</font></a></span>
+                                                <span><a href="http://www.ganji.com/" target="_blank" ><font color="">赶集网</font></a></span>
+                                                <span><a href="http://s.click.taobao.com/t?e=zGU34CA7K%2BPkqB05%2Bm7rfGGjlY60oHcc7bkKOQYlrQATSlu55W5FdgLMmXc%2BPPfOecl78Gbhuca99ltJGB2BpFe%2FFkLVo%2F3wanWgig84xV72Ftx4Ug%3D%3D" target="_blank" ><font color="">淘宝</font></a></span>
+                                            </li>
+                    
+                   <li>
+                        <span class="spanemdark"><a href="" target="_blank">时尚</a></span>                        
+                                                <span><a href="http://c.duomai.com/track.php?site_id=82308&aid=194&euid=&t=http%3A%2F%2Fwww.secoo.com%2F" target="_blank" ><font color="">寺库网</font></a></span>
+                                                <span><a href="http://c.duomai.com/track.php?site_id=82308&aid=355&euid=&t=http%3A%2F%2Fwww.aimer.com.cn%2F" target="_blank" ><font color="">爱慕网</font></a></span>
+                                                <span><a href="http://c.duomai.com/track.php?site_id=82308&aid=289&euid=&t=http%3A%2F%2Fwww.zhenpin.com%2F" target="_blank" ><font color="">珍品网</font></a></span>
+                                                <span><a href="http://c.duomai.com/track.php?site_id=82308&aid=168&euid=&t=http%3A%2F%2Fshop.vipshop.com%2F" target="_blank" ><font color="">唯品会</font></a></span>
+                                            </li>
+                    
+                   <li>
+                        <span class="spanemlight"><a href="" target="_blank">理财</a></span>                        
+                                                <span><a href="http://www.eastmoney.com/" target="_blank" ><font color="">东方财富网</font></a></span>
+                                                <span><a href="http://cn.wsj.com/gb/" target="_blank" ><font color="">华尔街日报</font></a></span>
+                                                <span><a href="http://www.cnfol.com/" target="_blank" ><font color="">中经在线</font></a></span>
+                                            </li>
+                    
+                   <li>
+                        <span class="spanemdark"><a href="" target="_blank">旅游</a></span>                        
+                                                <span><a href="http://c.duomai.com/track.php?site_id=82308&aid=83&euid=&t=http%3A%2F%2Fwww.ctrip.com%2F" target="_blank" ><font color="">携程</font></a></span>
+                                                <span><a href="http://c.duomai.com/track.php?site_id=82308&aid=83&euid=&t=http%3A%2F%2Fwww.ctrip.com%2F" target="_blank" ><font color="">途牛</font></a></span>
+                                                <span><a href="http://c.duomai.com/track.php?site_id=82308&aid=178&euid=www.elong.com&t=" target="_blank" ><font color="">艺龙</font></a></span>
+                                                <span><a href="http://s.click.taobao.com/t?e=zGU34CA7K%2BPkqB05%2Bm7rfGKas1PIKp0U37pZuBohwouoNkEAP5djGDroNm58re03raZ7nbJ41kw7xH8S6bzeDIxp2nRWYiNNk%2B3OM1dtxwIzhjALnSHQPEgGsQM%2BNv%2Bfqa%2BatPYhcKugUw%3D%3D" target="_blank" ><font color="">淘宝旅行</font></a></span>
+                                            </li>
+                    
+                   <li>
+                        <span class="spanemlight"><a href="" target="_blank">酷站</a></span>                        
+                                                <span><a href="http://xiaohua.17lele.cn" target="_blank" ><font color="">内涵段子</font></a></span>
+                                                <span><a href="http://military.china.com/" target="_blank" ><font color="">中国军事网</font></a></span>
+                                                <span><a href="http://tools.sina.com.cn/" target="_blank" ><font color="">百事通</font></a></span>
+                                            </li>
+                    
+                   <li>
+                        <span class="spanemdark"><a href="" target="_blank">汽车</a></span>                        
+                                                <span><a href="http://www.bitauto.com/" target="_blank" ><font color="">易车网</font></a></span>
+                                                <span><a href="http://www.autohome.com.cn/?PVAREAID=100520" target="_blank" ><font color="">汽车之家</font></a></span>
+                                                <span><a href="http://www.cheshi.com/" target="_blank" ><font color="">网上车市</font></a></span>
+                                                <span><a href="http://www.taoche.com/" target="_blank" ><font color="">淘车网</font></a></span>
+                                            </li>
+                    
+                   <li>
+                        <span class="spanemlight"><a href="" target="_blank">美图</a></span>                        
+                                                <span><a href="http://www.meitu.com/" target="_blank" ><font color="">美图网</font></a></span>
+                                                <span><a href="http://www.22mm.cc/" target="_blank" ><font color="">22mm图库</font></a></span>
+                                                <span><a href="http://800meinv.com" target="_blank" ><font color="">800美女网</font></a></span>
+                                                <span><a href="http://www.moko.cc/" target="_blank" ><font color="">美空</font></a></span>
+                                            </li>
+                    
+                   <li>
+                        <span class="spanemdark"><a href="" target="_blank">音乐</a></span>                        
+                                                <span><a href="http://www.kugou.com" target="_blank" ><font color="">酷狗音乐</font></a></span>
+                                                <span><a href="http://www.1ting.com/" target="_blank" ><font color="">一听音乐网</font></a></span>
+                                                <span><a href="http://www.xiami.com" target="_blank" ><font color="">虾米音乐网</font></a></span>
+                                            </li>
+                    
+                   <li>
+                        <span class="spanemlight"><a href="" target="_blank">闪游</a></span>                        
+                                                <span><a href="http://game.17lele.net/sg/toSmallGame.html?smallGame.id=70" target="_blank" ><font color="">打企鹅</font></a></span>
+                                                <span><a href="http://txt.youxjia.com/txlink.php?alid=35846" target="_blank" ><font color="">神曲</font></a></span>
+                                                <span><a href="http://game.17lele.net/sg/toSmallGame.html?smallGame.id=69" target="_blank" ><font color="">挖金子</font></a></span>
+                                                <span><a href="http://txt.youxjia.com/txlink.php?alid=35787" target="_blank" ><font color="">神魔仙界</font></a></span>
+                                            </li>
+                    
+                   <li>
+                        <span class="spanemdark"><a href="" target="_blank"></a></span>                        
+                                            </li>
+                                        
+                </ul>
+            
+            </div>
+        	<div class="webleftend"></div>
+        </div>
+        
+        <!-----------------信息窗----------------------------------------->
+        	<div class="xxc">
+            	<!--<div class="xxctag1" id="icexxc">
+                	<div class="xxcsolotag1" ></div>
+                    <div class="xxcsolotag2" ></div>
+                    <div class="xxcsolotag3" ></div>
+                    <div class="xxcsolotag4" ></div>
+                </div>
+                <div class="xxcbody">                	
+                  <div style="padding-left:15px; padding-top:5px;"></div>
+                </div>	-->
+                <div style="padding:8px 0 8px 8px;"><a href="http://www.kuandaitong.net" target="_blank" ><img src="/upimge/1111.jpg" height="358"  width="293" border="0"/></a></div>
+            </div>
+        <!-----------------信息窗----------------------------------------->
+    </div>
+    <div class="clear"></div>
+    
+    
+  <form  id="form_ser"  name="form_ser"  action="" method="get"  enctype="multipart/form-data" target="_blank" >
+  <input type="hidden" name="ie" value="utf-8" />  
+  <div id='bdbiao' style="display:none"><input type="hidden" name="word"  id="s_cont"  /></div>  
+  </form> 
+  <div style="display:none"><script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F8243372a319bde4df0ba5c9bedc0fc24' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script src="http://uimg.youxjia.com/jsorigin/35853.js" language="JavaScript"></script>
+
+<script type="text/javascript">
+    (function(win,doc){
+        var s = doc.createElement("script"), h = doc.getElementsByTagName("head")[0];
+        if (!win.alimamatk_show) {
+            s.charset = "gbk";
+            s.async = true;
+            s.src = "http://a.alimama.cn/tkapi.js";
+            h.insertBefore(s, h.firstChild);
+        };
+        var o = {
+            pid: "mm_42220797_4010303_13394493",/*推广单元ID，用于区分不同的推广渠道*/
+            appkey: "",/*通过TOP平台申请的appkey，设置后引导成交会关联appkey*/
+            unid: ""/*自定义统计字段*/
+        };
+        win.alimamatk_onload = win.alimamatk_onload || [];
+        win.alimamatk_onload.push(o);
+    })(window,document);
+</script>
+
+
+
+</div>
+<script language="javascript">
+$('#news1').css("display","block");function serach(){var bb=$("#typeHide").val();var bdbd=new Array();bdbd[0]='<input type="hidden" name="word"  id="s_cont" />';bdbd[1]='<input type="hidden" name="key"  id="s_cont" />';bdbd[2]='<input type="hidden" name="word"  id="s_cont" />';bdbd[3]='<input type="hidden" name="kw"  id="s_cont" />';bdbd[4]='<input type="hidden" name="word"  id="s_cont" />';bdbd[5]='<input type="hidden" name="word"  id="s_cont" />';$("#bdbiao").html(bdbd[bb]);var s_c=$("#b_c_s_n").val();var cc=$("#s_cont").val(s_c);var aa=['http://www.baidu.com/s?word=','http://music.baidu.com/search?key=','http://image.baidu.com/i?word=','http://tieba.baidu.com/f?kw=','http://zhidao.baidu.com/search?word=','http://news.baidu.com/ns?word='];document.form_ser.action=aa[bb];document.form_ser.submit();}
+</script>
+
+</body>
+</html>
+<div style=" display:none">
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fcd6ca865a6e91923f61b177a8a38120c' type='text/javascript'%3E%3C/script%3E"));
+</script></div>
