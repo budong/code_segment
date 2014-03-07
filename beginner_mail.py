@@ -2,14 +2,22 @@
 #coding: utf-8
 
 import smtplib
+from email.Message import Message 
 
 fromaddr = 'peiqiang.lee@gmail.com'
 toaddr = 'lipeiqiang@mumayi.com'
 
-msg = "This is a test"
+#msg = "test\ntest"
+
+msg = Message()
+msg['Subject'] = 'subject'
+msg['From'] = fromaddr
+msg['To'] = toaddr
+msg.set_payload('mail content')
+msg =  msg.as_string()
 
 username = 'peiqiang.lee@gmail.com'
-password = 'lipeiqiang38145'
+password = 'password'
 
 server = smtplib.SMTP('smtp.gmail.com:587')
 server.starttls()
