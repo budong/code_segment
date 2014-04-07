@@ -4,6 +4,8 @@
 import time
 import threading
 import string
+from Queue import Queue
+#from queue import Queue
 
 #def worker():
 #    print "worker"
@@ -114,14 +116,78 @@ import string
 #    print 'count:',count
 
 
-def doWaiting():
-    print 'start waiting:',time.strftime('%H:%M:%S')
-    time.sleep(3)
-    print 'stop waitting:',time.strftime('%H:%M:%S')
+#def doWaiting():
+#    print 'start waiting:',time.strftime('%H:%M:%S')
+#    time.sleep(3)
+#    print 'stop waitting:',time.strftime('%H:%M:%S')
+#
+#thread1 = threading.Thread(target=doWaiting)
+#thread1.start()
+#time.sleep(1)
+#print 'start join'
+#thread1.join()
+#print 'end join'
 
-thread1 = threading.Thread(target=doWaiting)
-thread1.start()
-time.sleep(1)
-print 'start join'
-thread1.join()
-print 'end join'
+
+#def clock(interval):
+#    while True:
+#        print ("The time is %s" % time.ctime())
+#        time.sleep(interval)
+#
+#if __name__ == '__main__':
+#    threads = []
+#    for x in xrange(0,4):
+#        threads.append(threading.Thread(target=clock,args=(3,)))
+#    for t in threads:
+#        t.start()
+#    for t in threads:
+#        t.join()
+#
+
+#class ClockThread(threading.Thread):
+#    def __init__(self,interval):
+#        threading.Thread.__init__(self)
+#        self.daemon = True
+#        self.interval = interval
+#
+#    def run(self):
+#        while True:
+#            print ("The time is %s" % time.ctime())
+#            time.sleep(self.interval)
+#
+#if __name__ == '__main__':
+#    threads = []
+#    for x in xrange(0,3):
+#        threads.append(ClockThread(3))
+#    for t in threads:
+#        t.start()
+#    for t in threads:
+#        t.join()
+
+class WorkerThread(threading.Thread):
+    def __init__(self,*args,**kwargs):
+        threading.Thread.__init__(self,*args,**kwargs)
+        self.input_queue = Queue()
+    def send(self,item):
+        self.input_queue.put(item)
+    def close(self):
+        self.input_queue.put(None)
+        self.input_queue.join()
+    def run(self):
+        while True:
+            item = self.input_queue.get()
+            if item is None:
+                break
+            print (item)
+            self.input_queue.task_done()
+        self.input_queue.task_done()
+        return
+
+if __name__ == '__main__':
+    w = WorkerThread()
+    w.start()
+    w.send("hello")
+    w.send("world")
+    w.close()
+
+
