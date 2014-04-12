@@ -29,5 +29,11 @@ fh = open("/tmp/hello.txt","a")
 fh.write("Hello World again")
 fh.close()
 
+while 1:
+    line = fh.readline()
+    if not line:
+        break
+    pass #do something
+
 
 
