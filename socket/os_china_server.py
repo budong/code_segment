@@ -55,7 +55,7 @@ conn,addr = s.accept()
 print 'Connected with ' + addr[0] + ':' + str(addr[1])
 while 1:
     data = conn.recv(1024)
-    reply = 'OK' + data
+    reply = 'OK'
     if not data:
         break
     conn.sendall(reply)

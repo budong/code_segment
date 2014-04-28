@@ -4,14 +4,14 @@
 import os
 from os.path import join,getsize
 
-for root,dirs,files in os.walk("/var/log"):
-    #print "root :",root
-    #print "dirs :",dirs
-    #print "files :",files
+for root,dirs,files in os.walk("/Users/budong/Downloads/my_project/sina"):
+    print "root :",root
+    print "dirs :",dirs
+    print "files :",files
 
-    print root,"consumes",
-    print sum([getsize(join(root,name)) for name in files]),
-    print "bytes in",len(files),"non-directory files"
+    #print root,"consumes",
+    #print sum([getsize(join(root,name)) for name in files]),
+    #print "bytes in",len(files),"non-directory files"
 
 import fnmatch
 
