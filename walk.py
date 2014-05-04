@@ -3,6 +3,7 @@
 
 import os
 import sys
+import fnmatch
 import sqlite3
 
 if len(sys.argv) < 2:
@@ -33,15 +34,18 @@ def _check_vid(directory,vid):
 
 
 def check_file():
+    patterns = ['*.hlv','*.flv','*.mp4','*.3gp']
     for directory in DIR_LIST:
-        data_dir = ''.join([directory,'/t'])
-        for root,dirs,files in os.walk(data_dir):
-            for file in files:
-                absolute_file = os.path.join(root,file)
-                vid = file.split(".")[0]
-                if not _check_vid(directory,vid):
-                    print 'Delete file %s ' % absolute_file
-                    os.remove(absolute_file)
+        #data_dir = ''.join([directory,'/t'])
+        #for root,dirs,files in os.walk(data_dir):
+        for root,dirs,files in os.walk(directory):
+            for extensions in patterns:
+                for file in fnmatch.filter(files,extensions):
+                    absolute_file = os.path.join(root,file)
+                    vid = file.split(".")[0]
+                    if not _check_vid(directory,vid):
+                        print 'Delete file %s ' % absolute_file
+                        #os.remove(absolute_file)
         
 if __name__ == '__main__':
     check_file()
