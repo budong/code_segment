@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block cright %}
+	<h3>编辑IDC<h3/>
+    <form method="post" action="">
+	<table class="table table-striped table-bordered">
+    <input type="hidden" name="idc_name" value={{ cdn_idc['idc_name'] }}>
+	    <tr>
+			<th>IDC名字</th>
+			<th>IDC最大带宽</th>
+            <th colspan="2">Domain</th>
+	    </tr>
+	    <tr>
+            <td>{{ cdn_idc['idc_name'] }}</td>
+            <td>{{ cdn_idc['max_bandwidth'] }}</td>
+            <td colspan="2">{{ cdn_idc['domain'] }}</td>
+        </tr>
+        <tr>
+            <td>{{ cdn_idc['idc_name'] }}</td>
+            <td>      
+                <input type="text" name="idc_bw" value={{ cdn_idc['max_bandwidth'] }}>   
+            </td>
+            <td>
+                <input type="text" name="domain" value={{ cdn_idc['domain'] }}>
+            </td>
+            <td>
+                <input type="submit" value="提交" class="btn btn-default">
+            </td>
+        </tr>
+
+	</table>
+    </form>
+{% end %}

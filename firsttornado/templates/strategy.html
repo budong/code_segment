@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block cright %}
+	<h3>调度策略</h3>
+	<table class="table table-striped table-bordered">
+		<tr>
+			<th>地区</th>
+			<th>ISP服务商</th>
+			<th colspan="4">IDC机房</th>
+		</tr>
+
+        {%  for strategy in cdn_strategy %}
+			<tr>
+                <td>{{ strategy['region_name'] }}</td>
+                <td>{{ strategy['sp_name'] }}</td>
+              	<td>
+                {% for iw in strategy['idc_weight'] %}
+                    <br> {{ iw[0] }}  &nbsp; &nbsp;权重：{{ iw[1] }}</br>
+                {% end %}
+                </td>
+                <td><a href="/strategy/edit/{{ strategy['region_id'] }}/{{ strategy['sp_id'] }}">编辑</a></td>
+                <td><a href="/strategy/delete/{{ strategy['region_id'] }}/{{ strategy['sp_id'] }}">删除</a></td>
+            </tr>
+        {% end %}
+
+	</table>
+{% end %}

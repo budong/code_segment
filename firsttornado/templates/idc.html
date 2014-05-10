@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block cright %}
+	<h3>机房信息</h3>
+	<table class="table table-striped table-bordered" id="alertdisk">
+		<tr>
+			<th>IDC名字</th>
+			<th>IDC ID</th>
+            <th>Domain</th>
+			<th>IDC最大带宽</th>
+			<th>服务器最大带宽</th>
+            <th>服务器使用带宽</th>
+			<th>IDC最大磁盘</th>
+			<th>IDC使用磁盘</th>
+			<th colspan="4">IDC固化磁盘</th>
+		</tr>
+            {%  for item in cdn_idc %}
+			<tr>
+                <td>{{ item['idc_name'] }}</td>
+                <td>{{ item['idc_id'] }}</td>
+                <td>{{ item['domain'] }}</td>
+
+
+                {% if item['idc_max_bandwidth'] is None %}
+                    {% set item['idc_max_bandwidth'] = 0 %}
+                {% end %}
+                <td>{{ item['idc_max_bandwidth'] }} M</td>
+
+                {% if item['machine_max_bandwidth'] is None %}
+                    {% set item['machine_max_bandwidth'] = 0 %}
+                {% end %}
+                <td>{{ item['machine_max_bandwidth'] }} M</td>
+
+                {% if item['machine_use_bandwidth'] is None %}
+                    {% set item['machine_use_bandwidth'] = 0 %}
+                {% end %}
+                <td>{{ item['machine_use_bandwidth'] }} M</td>
+
+                {% if item['idc_total_disk'] is None %}
+                    {% set item['idc_total_disk'] = 0 %}
+                {% end %}
+                <td>{{ item['idc_total_disk']//1024//1024//1024 }} G</td>
+
+                {% if item['idc_use_disk'] is None %}
+                    {% set item['idc_use_disk'] = 0 %}
+                {% end %}
+                <td>{{ item['idc_use_disk']//1024//1024//1024 }} G</td>
+
+                {% if item['idc_save_disk'] is None %}
+                    {% set item['idc_save_disk'] = 0 %}
+                {% end %}
+                <td>{{ item['idc_save_disk']//1024//1024//1024 }} G</td>
+
+                <td> <a href="/idc/edit/{{ item['idc_id'] }}">编辑</a></td>
+                <td> <a href="/idc/delete/{{ item['idc_id'] }}">删除</a></td>
+                <td> <a href="/idc/{{ item['idc_id'] }}">详细</a></td>        
+            </tr>
+            {% end %}
+            {% if total %}
+            <tr>
+                <td>IDC 信息汇总: </td>
+                <td> </td>
+                <td>{{ total['idc_max_bandwidth'] }} M</td>
+                <td>{{ total['machine_max_bandwidth'] }} M</td>
+                <td>{{ total['machine_use_bandwidth'] }} M</td>
+                <td>{{ total['idc_total_disk']//1024//1024//1024 }} G</td>
+                <td>{{ total['idc_use_disk']//1024//1024//1024 }} G</td>
+                <td>{{ total['idc_save_disk']//1024//1024//1024 }} G</td>
+            </tr>
+            {% end %}
+		  </table>
+          
+{% end %}
+
+{% block footer %}
+<script type="text/javascript">
+$(document).ready(function(){
+$('#alertdisk tr').each(function () {
+var renum = /\d+/gi;
+//var renum = new RegExp((\d+));
+var sd=$(this).children('td').eq(8).html();
+//alert(sd);
+var td=$(this).children('td').eq(6).html();
+var savedisk = renum.exec(sd);
+//var s= savedisk
+var savedisk = sd.match(renum);
+
+console.log(savedisk);
+//var savedisk = sd.match(renum);
+//var totaldisk = td.match(renum);
+    /*
+if(savedisk/totaldisk>0.8){
+    $(this).css("background","#FF0000");
+    $(this).children('td').attr("style","background:#FF0000;");
+}*/
+
+});
+});
+</script>
+{% end %}

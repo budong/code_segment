@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block cright %}
+	<h3>机房信息</h3>
+{% if form is not None %}
+{% if form.errors %}
+    <ul class="errors">
+        {% for field_name, field_errors in form.errors.iteritems() %}
+            {% for error in field_errors %}
+                <li>{% raw   error %}</li>
+            {% end %}
+        {% end %}
+    </ul>
+{% end %}
+{% end %}
+	<table>
+		<tr>
+			<th>公网IP</th>
+			<th>服务器最大带宽</th>
+            <th>服务器使用带宽</th>
+			<th>服务器最大磁盘</th>
+			<th>服务器使用磁盘</th>
+			<th>服务器固化磁盘</th>
+		</tr>
+		<tr>
+            <td>{{ cdn_machine['host'] }}</td>
+            <td>{{ cdn_machine['max_bandwidth'] }}</td>
+            <td>{{ cdn_machine['use_bandwidth'] }}</td>
+            <td>{{ cdn_machine['total_disk'] }}</td>
+            <td>{{ cdn_machine['use_disk'] }}</td>
+            <td>{{ cdn_machine['save_disk'] }}</td>
+        </tr>
+        <tr>
+            <form method="post" action="">
+                <td><input type="text" name="host" value={{ cdn_machine['host'] }}></td>
+                <td><input type="text" name="max_bandwidth" value={{ cdn_machine['max_bandwidth'] }}></td>
+                <td><input type="text" name="use_bandwidth" value={{ cdn_machine['use_bandwidth'] }}></td>
+                <td><input type="text" name="total_disk" value={{ cdn_machine['total_disk'] }}></td>
+                <td><input type="text" name="use_disk" value={{ cdn_machine['use_disk'] }}></td>
+                <td><input type="text" name="save_disk" value={{ cdn_machine['save_disk'] }}></td>
+                <td><input type="hidden" name="machine_id" value={{ cdn_machine['machine_id'] }}></td>
+                <td><input type="submit" value="提交" class="btn btn-default"></td>
+            </form>
+        </tr>
+	</table>
+{% end %}

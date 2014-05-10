@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block cright %}
+<table class="table table-striped table-bordered">
+    <tr>
+    <th colspan="3" style="text-align:center">搜索</th>
+    </tr>
+	<tr>
+		<form action="" method="post">
+        <td>
+			<select name='region_id'>
+             	<option value="all">全部省份</option>
+                {% for region in cdn_region %}
+             	<option value={{ region['region_id'] }}>{{ region['region_name'] }}</option>
+                {% end %}
+         	</select>
+        </td>
+		<td>
+			<select name='sp_id'>
+             	<option value="all" >全部ISP</option>
+                {% for sp in cdn_sp %}
+             	<option value={{ sp['sp_id'] }}>{{ sp['sp_name'] }}</option>
+                {% end %}
+         	</select>
+        </td>
+        <td><input type="submit" value="提交" class="btn btn-default" /></td>
+        </form>
+    </tr>
+{% end %}
