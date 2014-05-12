@@ -24,12 +24,6 @@ define("mysql_database", default="cdndb_1", help="database name")
 define("mysql_user", default="root", help="database user")
 define("mysql_password", default="budong", help="database password")
 
-#Production
-#define("port", default=8888, help="run on the given port", type=int)
-#define("mysql_host", default="172.16.139.89:3302", help="database host")
-#define("mysql_database", default="cdndb_1", help="database name")
-#define("mysql_user", default="cdn", help="database user")
-#define("mysql_password", default="cdn", help="database password")
 
 class Application(tornado.web.Application):
     def __init__(self):
