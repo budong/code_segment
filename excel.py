@@ -19,3 +19,4 @@ with open('%s/data.txt' % PREFIX,'a') as file:
         file.write(col+'\n')
 
 #参考地址：http://www.cnblogs.com/lhj588/archive/2012/01/06/2314181.html
+#http://www.gocalf.com/blog/python-read-write-excel.html
